@@ -1,15 +1,18 @@
-/**
- * Class Pelicula
- */
 package uni1a;
 
-// Subclase Pelicula que extiende de ContenidoAudiovisual
+import java.util.ArrayList;
+import java.util.List;
+import poo.Actor; 
+
 public class Pelicula extends ContenidoAudiovisual {
+
     private String estudio;
+    private List<Actor> reparto; 
 
     public Pelicula(String titulo, int duracionEnMinutos, String genero, String estudio) {
         super(titulo, duracionEnMinutos, genero);
         this.estudio = estudio;
+        this.reparto = new ArrayList<>(); 
     }
 
     public String getEstudio() {
@@ -19,7 +22,11 @@ public class Pelicula extends ContenidoAudiovisual {
     public void setEstudio(String estudio) {
         this.estudio = estudio;
     }
-    
+
+    public void addActor(Actor actor) {
+        this.reparto.add(actor);
+    }
+
     @Override
     public void mostrarDetalles() {
         System.out.println("Detalles de la película:");
